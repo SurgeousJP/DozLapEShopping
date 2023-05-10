@@ -49,7 +49,7 @@ export class SearchComponent {
   }
 
   getProducts() {
-    this.service.getData("products").subscribe((result) =>
+    this.service.getProduct().subscribe((result) =>
     {
       this.pageTitle.setTitle("search " + this.keyword);
       this.contents = result.filter((product:any) => product.name.toLowerCase().indexOf(this.keyword.toLowerCase()) != -1);     
