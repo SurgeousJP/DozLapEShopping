@@ -5,15 +5,15 @@ import { MenuItem } from 'primeng/api';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
-  selector: 'app-brand',
-  templateUrl: './brand.component.html',
-  styleUrls: ['./brand.component.css']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class BrandComponent {
+export class CategoryComponent {
   contents:any =[];
   responsiveOptions: any;
-	getParamBrand: any;
-  selectedBrand:any;
+	getParamCategory: any;
+  selectedCategory:any;
 
   constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title){
     this.initResponsive();
@@ -42,17 +42,17 @@ export class BrandComponent {
   ngOnInit() {
 
     this.router.paramMap.subscribe(params => {
-      this.selectedBrand = params.get('brand');
-      this.pageTitle.setTitle(this.selectedBrand);
+      this.selectedCategory = params.get('category');
+      this.pageTitle.setTitle(this.selectedCategory);
       this.getProducts();
     });
 
   }
   
   getProducts() {
-    this.service.getData("products").subscribe((result) =>
+    this.service.getData("product").subscribe((result) =>
     {
-      this.contents = result.filter((product:any) => product.brand === this.selectedBrand);
+      this.contents = result.filter((product:any) => product.category === this.selectedCategory);
     });
   }
 }
