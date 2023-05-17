@@ -1,1 +1,3 @@
 # WebsiteComputers
+
+Simple Website that sells pcs, pc components, laptops,...
