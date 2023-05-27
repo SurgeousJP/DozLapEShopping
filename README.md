@@ -1,3 +1,2 @@
-# WebsiteComputers
-
-Simple Website that sells pcs, pc components, laptops,...
+# DozLapEShopping
+An online shopping web for purchasing laptops, electronic components
